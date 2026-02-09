@@ -58,14 +58,18 @@ public class UtilsTest {
     @Test
     public void testInsertionSort() {
         int[]  lijst = Utils.insertionSort(gesorteerdeLijst);
-        assertEquals(gesorteerdeLijst, lijst);
+        assertArrayEquals(gesorteerdeLijst, lijst);
     }
 
     @Test
     public void testMergeSort() {
         Utils.mergeSort(ongesorteerdeLijst, 0, ongesorteerdeLijst.length-1);
-        System.out.println(Arrays.toString(ongesorteerdeLijst));
-        System.out.println(Arrays.toString(gesorteerdeVersieOngesorteerdeLijst));
+        assertArrayEquals(ongesorteerdeLijst, gesorteerdeVersieOngesorteerdeLijst);
+    }
+
+    @Test
+    public void testQuickSort() {
+        Utils.quickSort(ongesorteerdeLijst, 0, ongesorteerdeLijst.length-1);
         assertArrayEquals(ongesorteerdeLijst, gesorteerdeVersieOngesorteerdeLijst);
     }
 }

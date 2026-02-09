@@ -1,6 +1,7 @@
 package com.floris;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class Utils {
     public static boolean zoek(int[] lijst, int waarde) {
@@ -182,5 +183,37 @@ public class Utils {
         mergeSort(lijst, left, mid);
         mergeSort(lijst, mid + 1, right);
         merge(lijst, left, mid, right);
+    }
+
+    public static int partition(int[] lijst, int left, int right) {
+        int pivot = lijst[right];
+
+        int i = left - 1;
+
+        for (int j = left; j <= right-1; j++) {
+            if (lijst[j] < pivot) {
+                i++;
+                swap(lijst, i, j);
+            }
+        }
+
+        swap(lijst, i+1, right);
+        return i + 1;
+    }
+
+    public static void quickSort(int[] lijst, int left, int right) {
+        if (left < right) {
+            int pivot = partition(lijst, left, right);
+
+            // recursion
+            quickSort(lijst, left, pivot - 1);
+            quickSort(lijst, pivot + 1, right);
+        }
+    }
+
+    public static void swap(int[] lijst, int i, int j) {
+        int temp = lijst[i];
+        lijst[i] = lijst[j];
+        lijst[j] = temp;
     }
 }
