@@ -23,4 +23,17 @@ public class Generics {
         return total;
     }
 
+    public static <T extends Comparable<T>> T[] insertionSort(T[] t) {
+        for (int i = 1; i < t.length; i++) {
+            T key = t[i];
+            int j =  i - 1;
+
+            while (j >= 0 && t[j].compareTo(key) > 0) {
+                t[j+1] = t[j];
+                j--;
+            }
+            t[j+1] = key;
+        }
+        return t;
+    }
 }

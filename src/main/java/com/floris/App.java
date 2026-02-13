@@ -137,5 +137,8 @@ public class App {
         MinMax<Integer> min = new MinMaxImpl<>();
         System.out.println(min.min(a));
         System.out.println(min.max(a));
+        System.out.println(Arrays.toString(Generics.insertionSort(a)));
+        String[] strings = {"T", "Test", "Te", "Halloo", "Woooow"};
+        System.out.println(Arrays.toString(Generics.insertionSort(strings)));
     }
 }
