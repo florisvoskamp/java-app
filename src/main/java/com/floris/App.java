@@ -127,5 +127,7 @@ public class App {
         System.out.printf("quickSort     →  %d ms%n", (t1 - t0) / 1_000_000);
 
         System.out.println("\n=== Done (all UtilsTest operations with timing) ===");
+
+        Pair<String, Integer> pair = new Pair<>("", 10);
     }
 }
