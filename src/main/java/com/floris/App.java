@@ -18,7 +18,7 @@ public class App {
         for (int i = 0; i < groteLijst.length; i++) groteLijst[i] = i;
 
         // Large unsorted list for sorting benchmarks (same data for all algorithms)
-        final int SORT_SIZE = 250_000;
+        final int SORT_SIZE = 2500;
         int[] groteOngesorteerdeLijst = new int[SORT_SIZE];
         Random rng = new Random(42);
         for (int i = 0; i < groteOngesorteerdeLijst.length; i++) {
@@ -129,5 +129,8 @@ public class App {
         System.out.println("\n=== Done (all UtilsTest operations with timing) ===");
 
         Pair<String, Integer> pair = new Pair<>("", 10);
+
+        Integer[] a = {1,2,3,4,5,6,7};
+        System.out.println(Generics.countGreaterThan(a, 2));
     }
 }
