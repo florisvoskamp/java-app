@@ -3,6 +3,7 @@ package com.floris;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -130,7 +131,11 @@ public class App {
 
         Pair<String, Integer> pair = new Pair<>("", 10);
 
-        Integer[] a = {1,2,3,4,5,6,7};
+        Integer[] a = {5,2,30,-10,5,6,9};
         System.out.println(Generics.countGreaterThan(a, 2));
+        System.out.println(Generics.sum(List.of(a)));
+        MinMax<Integer> min = new MinMaxImpl<>();
+        System.out.println(min.min(a));
+        System.out.println(min.max(a));
     }
 }
