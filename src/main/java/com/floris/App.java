@@ -162,7 +162,7 @@ public class App {
 
         System.out.println("\n=== Done (all UtilsTest operations with timing) ===");
 
-        Pair<String, Integer> pair = new Pair<>("", 10);
+        Pair<String, Integer> pair = new Pair<String, Integer>("", 10);
 
         Integer[] a = {5,2,30,-10,5,6,9};
         System.out.println(Generics.countGreaterThan(a, 2));

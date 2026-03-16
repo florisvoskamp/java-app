@@ -1,14 +1,17 @@
-package com.floris.antler;// Generated from /home/floris/Documents/Repositories/College/Y3/APP/app/src/main/java/com/floris/antler/Configuration.g4 by ANTLR 4.13.2
-
+// Generated from /home/floris/Documents/Repositories/College/Y3/APP/app/src/main/java/com/floris/antler/Configuration.g4 by ANTLR 4.9.2
+ package com.floris.antler; 
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.misc.*;
 import org.antlr.v4.runtime.tree.*;
 import java.util.List;
+import java.util.Iterator;
+import java.util.ArrayList;
 
-@SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast", "CheckReturnValue", "this-escape"})
+@SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class ConfigurationParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.13.2", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.9.2", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -86,7 +89,6 @@ public class ConfigurationParser extends Parser {
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class PropertiesContext extends ParserRuleContext {
 		public List<PropertyContext> property() {
 			return getRuleContexts(PropertyContext.class);
@@ -98,19 +100,6 @@ public class ConfigurationParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_properties; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ConfigurationListener ) ((ConfigurationListener)listener).enterProperties(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ConfigurationListener ) ((ConfigurationListener)listener).exitProperties(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ConfigurationVisitor ) return ((ConfigurationVisitor<? extends T>)visitor).visitProperties(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final PropertiesContext properties() throws RecognitionException {
@@ -147,7 +136,6 @@ public class ConfigurationParser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class PropertyContext extends ParserRuleContext {
 		public TerminalNode ID() { return getToken(ConfigurationParser.ID, 0); }
 		public ValueContext value() {
@@ -157,19 +145,6 @@ public class ConfigurationParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_property; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ConfigurationListener ) ((ConfigurationListener)listener).enterProperty(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ConfigurationListener ) ((ConfigurationListener)listener).exitProperty(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ConfigurationVisitor ) return ((ConfigurationVisitor<? extends T>)visitor).visitProperty(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final PropertyContext property() throws RecognitionException {
@@ -197,7 +172,6 @@ public class ConfigurationParser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ValueContext extends ParserRuleContext {
 		public TerminalNode INT() { return getToken(ConfigurationParser.INT, 0); }
 		public TerminalNode STRING() { return getToken(ConfigurationParser.STRING, 0); }
@@ -205,19 +179,6 @@ public class ConfigurationParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_value; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ConfigurationListener ) ((ConfigurationListener)listener).enterValue(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ConfigurationListener ) ((ConfigurationListener)listener).exitValue(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ConfigurationVisitor ) return ((ConfigurationVisitor<? extends T>)visitor).visitValue(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final ValueContext value() throws RecognitionException {
@@ -251,18 +212,12 @@ public class ConfigurationParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\u0005\u0012\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001"+
-		"\u0002\u0002\u0007\u0002\u0001\u0000\u0004\u0000\b\b\u0000\u000b\u0000"+
-		"\f\u0000\t\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0002"+
-		"\u0001\u0002\u0001\u0002\u0000\u0000\u0003\u0000\u0002\u0004\u0000\u0001"+
-		"\u0001\u0000\u0003\u0004\u000f\u0000\u0007\u0001\u0000\u0000\u0000\u0002"+
-		"\u000b\u0001\u0000\u0000\u0000\u0004\u000f\u0001\u0000\u0000\u0000\u0006"+
-		"\b\u0003\u0002\u0001\u0000\u0007\u0006\u0001\u0000\u0000\u0000\b\t\u0001"+
-		"\u0000\u0000\u0000\t\u0007\u0001\u0000\u0000\u0000\t\n\u0001\u0000\u0000"+
-		"\u0000\n\u0001\u0001\u0000\u0000\u0000\u000b\f\u0005\u0002\u0000\u0000"+
-		"\f\r\u0005\u0001\u0000\u0000\r\u000e\u0003\u0004\u0002\u0000\u000e\u0003"+
-		"\u0001\u0000\u0000\u0000\u000f\u0010\u0007\u0000\u0000\u0000\u0010\u0005"+
-		"\u0001\u0000\u0000\u0000\u0001\t";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\7\24\4\2\t\2\4\3"+
+		"\t\3\4\4\t\4\3\2\6\2\n\n\2\r\2\16\2\13\3\3\3\3\3\3\3\3\3\4\3\4\3\4\2\2"+
+		"\5\2\4\6\2\3\3\2\5\6\2\21\2\t\3\2\2\2\4\r\3\2\2\2\6\21\3\2\2\2\b\n\5\4"+
+		"\3\2\t\b\3\2\2\2\n\13\3\2\2\2\13\t\3\2\2\2\13\f\3\2\2\2\f\3\3\2\2\2\r"+
+		"\16\7\4\2\2\16\17\7\3\2\2\17\20\5\6\4\2\20\5\3\2\2\2\21\22\t\2\2\2\22"+
+		"\7\3\2\2\2\3\13";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
