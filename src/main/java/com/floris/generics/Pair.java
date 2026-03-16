@@ -1,4 +1,4 @@
-package com.floris;
+package com.floris.generics;
 
 public class Pair<F, S> {
     private final F value;
@@ -9,3 +9,4 @@ public class Pair<F, S> {
         this.secondValue = secondValue;
     }
 }
+

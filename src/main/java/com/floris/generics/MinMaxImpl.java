@@ -1,4 +1,4 @@
-package com.floris;
+package com.floris.generics;
 
 public class MinMaxImpl<T extends Comparable<T>> implements MinMax<T> {
     @Override
@@ -23,3 +23,4 @@ public class MinMaxImpl<T extends Comparable<T>> implements MinMax<T> {
         return max;
     }
 }
+

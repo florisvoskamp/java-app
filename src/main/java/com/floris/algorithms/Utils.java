@@ -1,4 +1,4 @@
-package com.floris;
+package com.floris.algorithms;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -217,3 +217,4 @@ public class Utils {
         lijst[j] = temp;
     }
 }
+

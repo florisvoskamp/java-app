@@ -1,17 +1,50 @@
 package com.floris;
 
+import com.floris.algorithms.Utils;
+import com.floris.antler.ConfigurationLexer;
+import com.floris.antler.ConfigurationParser;
+import com.floris.antler.ConfigurationReader;
+import com.floris.generics.Generics;
+import com.floris.generics.MinMax;
+import com.floris.generics.MinMaxImpl;
+import com.floris.generics.Pair;
+import org.antlr.v4.runtime.CharStream;
+import org.antlr.v4.runtime.CharStreams;
+import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.tree.ParseTree;
+import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+
 
 /**
  * Hello world!
  */
 @SpringBootApplication
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        CharStream input = CharStreams.fromStream(new FileInputStream("/home/floris/Documents/Repositories/College/Y3/APP/app/src/main/java/com/floris/antler/input.txt"));
+        ConfigurationLexer lexer = new ConfigurationLexer(input);
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        ConfigurationParser parser = new ConfigurationParser(tokens);
+
+        // Get tree
+        ParseTree tree = parser.properties();
+
+        // Walk through tree using ConfigurationReader
+        ParseTreeWalker walker = new ParseTreeWalker();
+        ConfigurationReader reader = new ConfigurationReader();
+        walker.walk(reader, tree);
+
+        // Show the collected key-value pairs
+        System.out.print("Output using Listener: ");
+        System.out.println(reader.getProperties().toString());
+
         // Test data (aligned with UtilsTest where applicable)
         int[] lijst = {1, 3, 2};
         int[] gesorteerdeLijst = {1, 2, 3, 4, 5, 6, 6, 9, 10, 15, 18};

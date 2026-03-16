@@ -1,12 +1,12 @@
-package com.floris;
+package com.floris.generics;
 
 import java.util.List;
 
 public class Generics {
     public static <T extends Comparable<T>> int countGreaterThan(T[] t, T item) {
         int count = 0;
-        for  (int i = 0; i < t.length-1; i++) {
-            if (t[i].compareTo(item) > 0) {
+        for (T e : t) {
+            if (e.compareTo(item) > 0) {
                 count++;
             }
         }
@@ -37,3 +37,4 @@ public class Generics {
         return t;
     }
 }
+
